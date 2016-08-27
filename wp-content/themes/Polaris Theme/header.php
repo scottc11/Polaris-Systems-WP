@@ -18,11 +18,13 @@
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/frameworks/bootstrap-3.3.7/css/bootstrap.min.css">
 
 		<!-- Link all external fonts here -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,900&subset=cyrillic,greek,vietnamese" rel="stylesheet">
 
 		<!-- Link the main style.css here -->
+		<!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/main.css"> -->
 
 		<!-- Link additional CSS files here -->
-
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/responsive.css">
 
 
 		<?php wp_head(); ?>
@@ -36,22 +38,39 @@
 		<div class="wrapper">
 
 			<!-- header -->
-			<header class="header clear" role="banner">
+			<header role="banner">
 
-					<!-- logo -->
-					<div class="logo">
-						<a href="<?php echo home_url(); ?>">
-							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-							<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img">
-						</a>
+				<div class="header-background">
+
+					<div class="container">
+
+						<div class="row">
+
+							<div class="header-logo-container col-xs-6 col-sm-4 col-sm-offset-0 col-md-3 col-md-offset-0 col-lg-3 ">
+								<img class="header-logo vertical-center" src="<?php echo get_template_directory_uri(); ?>/assets/polaris_logo_white.png" alt="" />
+							</div>
+
+
+							<div class="header-nav-container col-xs-3 col-xs-offset-3 col-sm-8 col-sm-offset-0 col-md-6 col-md-offset-3">
+								<ul class="nav vertical-center ">
+									<li><a href="product-page.html">Products</a></li>
+									<li><a href="#services">Services</a></li>
+									<li><a href="contact.html">Contact</a></li>
+									<li id="menu-hamburger"><a href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a></li>
+								</ul>
+							</div>
+
+
+						</div>
+
 					</div>
-					<!-- /logo -->
+				</div>
 
-					<!-- nav -->
-					<nav class="nav" role="navigation">
-						<?php html5blank_nav(); ?>
-					</nav>
-					<!-- /nav -->
+				<!-- nav -->
+				<nav class="nav" role="navigation">
+					<?php html5blank_nav(); ?>
+				</nav>
+				<!-- /nav -->
 
 			</header>
 			<!-- /header -->

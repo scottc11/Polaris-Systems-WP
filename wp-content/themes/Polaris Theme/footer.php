@@ -18,17 +18,27 @@
 
 		<!-- analytics -->
 		<script>
-		(function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){
-		(f[s].q=f[s].q||[]).push(arguments)},f[s].l=1*new Date();h=i.createElement(r),
-		l=i.getElementsByTagName(r)[0];h.async=1;h.src=e;l.parentNode.insertBefore(h,l)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		ga('create', 'UA-XXXXXXXX-XX', 'yourdomain.com');
-		ga('send', 'pageview');
+			(function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){
+			(f[s].q=f[s].q||[]).push(arguments)},f[s].l=1*new Date();h=i.createElement(r),
+			l=i.getElementsByTagName(r)[0];h.async=1;h.src=e;l.parentNode.insertBefore(h,l)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-XXXXXXXX-XX', 'yourdomain.com');
+			ga('send', 'pageview');
 		</script>
 
-		<!-- Link custom script files here -->
+		<!-- JQUERY -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
-		
+
+		<!-- FRAMEWORKS -->
+		<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+		<script src="libraries/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+
+		<!-- CUSTOM SCRIPTS -->
+		<script src="js/main.js"></script>
+
+
 
 	</body>
 </html>
