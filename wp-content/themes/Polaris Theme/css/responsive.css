@@ -1,0 +1,50 @@
+
+/*==========  Non-Mobile First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+  .nav li:not(:last-child) {
+    display: none;
+  }
+
+  #menu-hamburger {
+    display: block;
+  }
+
+  .footer-logo, .footer-contact, .footer-contact ul, .footer-location {
+    float: none;
+    text-align: center;
+  }
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+  #menu-hamburger {
+    font-size: 1.5em;
+  }
+
+  .product-thumbnail {
+    height: 50px;
+  }
+
+  .product-suggestion-thumbnail {
+    height: 100px;
+  }
+
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+
+}

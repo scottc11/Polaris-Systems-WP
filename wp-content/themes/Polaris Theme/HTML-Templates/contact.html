@@ -1,0 +1,239 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Polaris Systems Inc.</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/boilerplate.css">
+        <!-- <link rel="stylesheet" href="css/960_12_col.css"> -->
+        <link href="libraries/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,900&subset=cyrillic,greek,vietnamese" rel="stylesheet">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/responsive.css">
+
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+
+
+
+
+    <body>
+
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+      <!--          HEADER                -->
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <section id="header">
+          <div class="header-background">
+            <div class="header-container container">
+              <div class="row">
+
+
+                <div class="header-logo-container col-xs-6 col-sm-4 col-sm-offset-0 col-md-3 col-md-offset-0 col-lg-3 ">
+                  <img class="header-logo vertical-center"src="assets/polaris_logo_white.png" alt="" />
+                </div>
+
+
+                <div class="header-nav-container col-xs-3 col-xs-offset-3 col-sm-8 col-sm-offset-0 col-md-6 col-md-offset-3">
+                  <ul class="nav vertical-center ">
+                    <li><a href="product-page">Products</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#footer">Contact</a></li>
+                    <li id="menu-hamburger"><a href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a></li>
+                  </ul>
+                </div>
+
+
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+
+
+        <section class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="underlined-header-container">
+                <h1>Contact Us</h1>
+                <hr class="underline-hr">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="contact-container col-xs-12 col-md-6">
+
+              <div class="margin-top-20">
+                <h5 class="margin-minimal">Give us a call at:</h5>
+                <h4 class="color-accent-baby-blue margin-minimal">(905) 757-5522</h4>
+              </div>
+
+              <div class="margin-top-20">
+                <h5 class="margin-minimal">Email us at:</h5>
+                <h4 class="color-accent-baby-blue margin-minimal">sales@polaris-systems.net</h4>
+              </div>
+
+              <div class="margin-top-20">
+                <h4>Contact Form</h4>
+
+                <p>
+                  Please fill in required information and a sales representatives will get in touch with you.  Thank you for your interest.
+                </p>
+              </div>
+
+              <form class="contact-form">
+                <input id="contact-name" type="text" name="contact" placeholder="Contact Name:">
+
+                <input id="contact-email" type="text" name="contact" placeholder="Email Address:">
+
+                <select class="select-style" name="interest">
+                  <option value="machine">I'm interested in:</option>
+                  <option value="machine">Machine</option>
+                  <option value="machine">Machine</option>
+                  <option value="machine">Machine</option>
+                </select>
+
+                <textarea name="message" placeholder="Message:" rows="8"></textarea>
+
+                <input type="submit" name="name" value="Send">
+
+              </form>
+
+            </div>
+
+
+
+            <div class="map-container col-xs-12 col-md-6">
+
+              <div class="">
+                <h5>Or visit us in person:</h5>
+                <h4 class="color-accent-baby-blue">2220 Argentia Road Unit #8, Mississauga, ON, Canada L5N 2K7</h4>
+              </div>
+
+              <div id="google-maps">
+
+              </div>
+
+              <!-- GOOGLE MAPS API -->
+
+              <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyerVxVUe9Hn08pP-IF24NNxwqNU5K02I&callback=initMap" async defer></script>
+
+              <script type="text/javascript">
+                function initMap() {
+
+                  var mapDiv = document.getElementById('google-maps');
+
+                  var myLongLat = {lat: 43.59709, lng: -79.74604};
+
+                  var map = new google.maps.Map(mapDiv, {
+                      center: {lat: 43.59709, lng: -79.74604},
+                      zoom: 11,
+                      styles: [
+                        {
+                          featureType: 'all',
+                          stylers: [
+                            { saturation: -80 }
+                          ]
+                        },{
+                          featureType: 'road.arterial',
+                          elementType: 'geometry',
+                          stylers: [
+                            { hue: '#00ffee' },
+                            { saturation: 50 }
+                          ]
+                        },{
+                          featureType: 'poi.business',
+                          elementType: 'labels',
+                          stylers: [
+                            { visibility: 'off' }
+                          ]
+                        }
+                      ]
+                  });
+
+                  var marker = new google.maps.Marker({
+                    position: myLongLat,
+                    map: map,
+                  });
+                }
+
+
+
+              </script>
+
+
+              <!-- /GOOGLE MAPS API -->
+
+            </div>
+
+
+          </div>
+
+        </section>
+
+
+
+
+
+
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <!--          FOOTER                -->
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+        <section id="footer">
+          <div class="footer-background">
+            <div class="footer-container container">
+
+              <div class="footer-location col-xs-12 col-sm-4">
+                <ul>
+                  <li><span>Polaris Sytems Inc.</span></li>
+                  <li>2220 Argentia Road, Unit #8</li>
+                  <li>Mississauga, ON</li>
+                  <li>L5N 2K7</li>
+                </ul>
+              </div>
+
+              <div class="footer-logo col-xs-12 col-sm-4">
+                <img src="assets/logo_white.png" alt="" />
+                <h4>The brightest star.</h4>
+                <h4>We are polaris.</h4>
+                <p>Polaris Systems Inc. &#169 2016, All Rights Reserved</p>
+              </div>
+
+              <div class="footer-contact col-xs-12 col-sm-4">
+                <ul>
+                  <li><span>Contact us now</span></li>
+                  <li>905.542.7577</li>
+                  <li>sales@polaris-systems.net</li>
+                </ul>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        <footer>
+          <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+          <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+
+
+
+          <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+          <script src="libraries/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+          <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+          <script src="js/main.js"></script>
+
+
+        </footer>
+    </body>
+</html>

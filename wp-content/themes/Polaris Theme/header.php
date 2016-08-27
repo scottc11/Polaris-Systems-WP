@@ -13,6 +13,9 @@
 
 
 		<!-- Link framework CSS files here -->
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/frameworks/normalize.min.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/frameworks/boilerplate.css">
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/frameworks/bootstrap-3.3.7/css/bootstrap.min.css">
 
 		<!-- Link all external fonts here -->
 
