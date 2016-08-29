@@ -51,14 +51,22 @@
 							</div>
 
 
-							<div class="header-nav-container col-xs-3 col-xs-offset-3 col-sm-8 col-sm-offset-0 col-md-6 col-md-offset-3">
+							<!-- <div class="header-nav-container col-xs-3 col-xs-offset-3 col-sm-8 col-sm-offset-0 col-md-6 col-md-offset-3">
 								<ul class="nav vertical-center ">
 									<li><a href="product-page.html">Products</a></li>
 									<li><a href="#services">Services</a></li>
 									<li><a href="contact.html">Contact</a></li>
 									<li id="menu-hamburger"><a href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a></li>
 								</ul>
-							</div>
+							</div> -->
+
+							<!-- nav -->
+							<nav class="header-nav-container col-xs-3 col-xs-offset-3 col-sm-8 col-sm-offset-0 col-md-6 col-md-offset-3" role="navigation">
+
+								<?php html5blank_nav(); ?>
+
+							</nav>
+							<!-- /nav -->
 
 
 						</div>
@@ -66,11 +74,7 @@
 					</div>
 				</div>
 
-				<!-- nav -->
-				<nav class="nav" role="navigation">
-					<?php html5blank_nav(); ?>
-				</nav>
-				<!-- /nav -->
+
 
 			</header>
 			<!-- /header -->

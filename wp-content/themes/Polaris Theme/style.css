@@ -168,25 +168,30 @@ hr {
   height: 80px;
 }
 
-.nav {
+.header-nav-container ul {
   display: inline-block;
   color: white;
   float: right;
   list-style: none;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  padding: 0;
 }
 
-.nav li {
+.header-nav-container ul li {
   display: inline-block;
   margin: 0 20px 0 20px;
   line-height: 100%;
 }
 
-.nav li a {
+.header-nav-container ul li a {
   color: white;
   text-decoration: none;
 }
 
-.nav li a:hover {
+.header-nav-container ul li a:hover {
   text-decoration: underline;
 }
 
