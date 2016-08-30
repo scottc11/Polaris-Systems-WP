@@ -10,7 +10,11 @@ Template Name: Product Page
 	<?php
 
 		// define the post type for the loop
-		$args = array( 'post_type' => 'psi_product' );
+		$args = array(
+			'post_type' => 'psi_product',
+			'supports' => array('title','editor','thumbnail','custom-fields')
+		);
+
 		// Create a new WP loop query and hand it the custom post type arguments
 		$loop = new WP_Query( $args );
 
@@ -18,7 +22,7 @@ Template Name: Product Page
 
 	?>
 
-	<article id="post-<?php the_ID(); ?>" class="container">
+	<article class="container">
 
 			<div class="row">
 
@@ -34,7 +38,9 @@ Template Name: Product Page
 				<div class="col-xs-12">
 					<div class="float-left">
 						<h2><?php the_title(); ?></h2>
-						<h3 class="font-weight-reg">Semi-Automatic Strapping Machine</h3 class="no-bold">
+						<?php debug_to_console($post->ID); ?>
+						<?php debug_to_console(get_post_meta( $post->ID, 'description_heading', true)); ?>
+						<h3 class="font-weight-reg"><?php echo get_post_meta( $post->ID, 'description_heading', true); ?></h3 class="no-bold">
 					</div>
 
 					<div class="supplier-logo-container float-right">
