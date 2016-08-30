@@ -6,19 +6,19 @@ Template Name: Product Page
 
 <?php get_header(); ?>
 
-	<article class="container">
+	<!-- START OF LOOP -->
+	<?php
 
-		<!-- START OF LOOP -->
-		<?php
+		// define the post type for the loop
+		$args = array( 'post_type' => 'psi_product' );
+		// Create a new WP loop query and hand it the custom post type arguments
+		$loop = new WP_Query( $args );
 
-			// define the post type for the loop
-			$args = array( 'post_type' => 'psi_product' );
-			// Create a new WP loop query and hand it the custom post type arguments
-			$loop = new WP_Query( $args );
+		if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post();
 
-			if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post();
+	?>
 
-		?>
+	<article id="post-<?php the_ID(); ?>" class="container">
 
 			<div class="row">
 
@@ -50,10 +50,11 @@ Template Name: Product Page
 				</div>
 			</header>
 
-		<!-- END OF LOOP -->
-		<?php endwhile; else: ?>
-			<p><?php _e( 'The product you are looking for could not be found.' ); ?></p>
-		<?php endif; ?>
 	</article>
+
+	<!-- END OF LOOP -->
+	<?php endwhile; else: ?>
+		<p><?php _e( 'The product you are looking for could not be found.' ); ?></p>
+	<?php endif; ?>
 
 <?php get_footer(); ?>
