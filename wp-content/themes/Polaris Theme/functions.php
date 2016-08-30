@@ -62,6 +62,15 @@ if (function_exists('add_theme_support'))
     Functions
 \*------------------------------------*/
 
+function has_supplier_logo_path($path) {
+  if ( $path != '' ) {
+    return true;
+  };
+}
+
+function PSI_get_attachment_url() {
+  
+}
 
 // PHP to Console Debugger function
 function debug_to_console( $data ) {

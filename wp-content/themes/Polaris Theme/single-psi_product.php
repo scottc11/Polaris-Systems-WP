@@ -24,6 +24,11 @@ Template Name: Product Page
 
 	<article class="container">
 
+
+			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+			<!--          WEB TRAIL       		  -->
+			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
 			<div class="row">
 
 				<div class="col-xs-12">
@@ -34,8 +39,16 @@ Template Name: Product Page
 			</div>
 
 
+
+
+			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+			<!--          PRODUCT HEADER        -->
+			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
 			<header class="row">
 				<div class="col-xs-12">
+
+					<!-- PRODUCT TITLE AND SUB-TITLE -->
 					<div class="float-left">
 						<h2><?php the_title(); ?></h2>
 						<?php debug_to_console($post->ID); ?>
@@ -43,18 +56,116 @@ Template Name: Product Page
 						<h3 class="font-weight-reg"><?php echo get_post_meta( $post->ID, 'description_heading', true); ?></h3 class="no-bold">
 					</div>
 
+					<!-- PRODUCT BRAND/SUPPLIER IMG -->
 					<div class="supplier-logo-container float-right">
-						<img class="vertical-center" src="assets/dynaric.png" alt="" />
+						<?php
+							$logoPath = get_post_meta( $post->ID, 'supplier_logo_path', true);
+							// check if products logo path != " "
+							if (has_supplier_logo_path($logoPath) == true ) : ?>
+								<img class="vertical-center" src="<?php echo get_template_directory_uri(); ?>/assets/supplier-logos/<?php echo get_post_meta( $post->ID, 'supplier_logo_path', true); ?>.png"/>
+						<?php endif; ?>
 					</div>
 
 				</div>
 
+				<!-- PRODUCT DESCRIPTION i.e the_excerpt() -->
 				<div class="col-xs-12">
 					<p class="bigger-text">
-						An economical, easy to use strapping machine designed to run 1/4 ”– 5/8” strapping. Equipped with externally adjustable strap feed and electronic tension control, the DF-30 is the perfect machine for securing and unitizing outgoing shipments.Offering added safety for the operator the DF30 has been redesigned with rounded corners, as well as an audible cycle alert safety signal. An "ACASS" is given when the strap has been inserted into the sealing mechanism prior to tensioning.
+						<?php the_excerpt(); ?>
 					</p>
 				</div>
 			</header>
+
+
+
+
+			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+			<!--          PRODUCT CONTENT       -->
+			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+			<section class="row">
+
+				<?php
+					$media = get_attached_media('image');
+					debug_to_console($media[0]->slug);
+				?>
+
+				<div class="margin-top-bottom-20 col-xs-12 col-md-6">
+					<div class="product-image-container horizontal-center col-xs-12">
+						<img src="assets/machines/DYN_DF30-0.png" alt="" />
+					</div>
+
+					<div class="additional-images">
+						<div class="col-xs-3 col-md-4 col-lg-3">
+							<div class="product-thumbnail">
+								<img src="assets/machines/DYN_DF30-1.png" alt="" />
+							</div>
+						</div>
+						<div class="col-xs-3 col-md-4 col-lg-3">
+							<div class="product-thumbnail">
+								<img src="assets/machines/DYN_DF30-2.png" alt="" />
+							</div>
+						</div>
+						<div class="col-xs-3 col-md-4 col-lg-3">
+							<div class="product-thumbnail"></div>
+						</div>
+						<div class="col-xs-3 col-md-4 col-lg-3">
+							<div class="product-thumbnail"></div>
+						</div>
+					</div>
+
+				</div>
+
+
+				<!-- TAB BOX -->
+				<div class="margin-top-bottom-20 col-xs-12 col-md-6">
+					<ul class="tab-box">
+						<a href="#" onclick="showDescription()" id="description-tab" ><li class="tab">Description</li></a>
+						<a href="#" onclick="showSpecifications()" id="specifications-tab" ><li class="tab">Specifications</li></a>
+					</ul>
+
+					<div id="description-content" class="tab-content active">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+					</div>
+
+					<div id="specifications-content" class="tab-content">
+						<ul>
+							<li>blah</li>
+							<li>blah</li>
+							<li>blah</li>
+							<li>blah</li>
+							<li>blah</li>
+							<li>blah</li>
+							<li>blah</li>
+						</ul>
+					</div>
+
+					<!-- VIDEO AND BUY NOW BUTTONS -->
+					<div class="">
+						<div class="col-xs-6">
+							<a href="#">
+								<div id="buy-now" class="product-page-button">
+									<h3 class="color-accent-white vertical-center">Buy Now</h3>
+								</div>
+							</a>
+						</div>
+
+						<div class="col-xs-6">
+							<a href="#">
+								<div id="watch-video" class="product-page-button">
+									<h3 class="color-accent-white vertical-center">Watch Video</h3>
+								</div>
+							</a>
+						</div>
+					</div>
+
+				</div>
+				<!-- /TAB BOX -->
+
+			</section>
+
 
 	</article>
 
