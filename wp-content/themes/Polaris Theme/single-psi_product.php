@@ -51,8 +51,6 @@ Template Name: Product Page
 					<!-- PRODUCT TITLE AND SUB-TITLE -->
 					<div class="float-left">
 						<h2><?php the_title(); ?></h2>
-						<?php debug_to_console($post->ID); ?>
-						<?php debug_to_console(get_post_meta( $post->ID, 'description_heading', true)); ?>
 						<h3 class="font-weight-reg"><?php echo get_post_meta( $post->ID, 'description_heading', true); ?></h3 class="no-bold">
 					</div>
 
@@ -80,7 +78,7 @@ Template Name: Product Page
 
 
 			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-			<!--          PRODUCT CONTENT       -->
+			<!--          PRODUCT IMAGES        -->
 			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 			<section class="row">
@@ -106,28 +104,36 @@ Template Name: Product Page
 				</div>
 
 
-				<!-- TAB BOX -->
+				<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+				<!--   DESCRIPTION AND SPECS        -->
+				<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
 				<div class="margin-top-bottom-20 col-xs-12 col-md-6">
 					<ul class="tab-box">
-						<a href="#" onclick="showDescription()" id="description-tab" ><li class="tab">Description</li></a>
-						<a href="#" onclick="showSpecifications()" id="specifications-tab" ><li class="tab">Specifications</li></a>
+						<li id="features-tab" class="tab">Features</li>
+						<li id="specs-tab" class="tab">Specifications</li>
 					</ul>
 
-					<div id="description-content" class="tab-content active">
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						</p>
+					<div id="features-content" class="tab-content active">
+
+						<ul>
+							<?php $features = get_post_meta( $post->ID, 'Feature', false); ?>
+							<?php foreach ($features as $feature) { ?>
+								<li><?php echo $feature ?></li>
+							<?php } ?>
+						</ul>
+
 					</div>
 
-					<div id="specifications-content" class="tab-content">
+					<div id="specs-content" class="tab-content">
 						<ul>
-							<li>blah</li>
-							<li>blah</li>
-							<li>blah</li>
-							<li>blah</li>
-							<li>blah</li>
-							<li>blah</li>
-							<li>blah</li>
+							<?php $specs = get_post_custom($post->ID); ?>
+							<?php foreach ($specs as $key => $value) {
+								if ( PSI_filter_custom_fields($key) == false ) { ?>
+									<li><span class="bold-text"><?php echo $key ?>:</span> <?php echo $value[0] ?></li>
+
+								<?php }
+							} ?>
 						</ul>
 					</div>
 

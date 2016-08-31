@@ -14,7 +14,7 @@ $('.alt-product-img-container').on('click', changeProductImage);
 
 
 // Show Description tab
-function showDescription() {
+function showFeatures() {
 
   // iterate through each tabs content, and hide them
   $('.tab-content').each( function() {
@@ -23,12 +23,12 @@ function showDescription() {
   );
 
   // add an active class to the respective content tab
-  $('#description-content').addClass('active');
+  $('#features-content').addClass('active');
 }
+$('#features-tab').on('click', showFeatures);
 
-
-//show specifications tab
-function showSpecifications() {
+//show specs tab
+function showSpecs() {
 
   // iterate through each tabs content, and hide them
   $('.tab-content').each( function() {
@@ -37,5 +37,7 @@ function showSpecifications() {
   );
 
   // add an active class to the respective content tab
-  $('#specifications-content').addClass('active');
+  $('#specs-content').addClass('active');
 }
+
+$('#specs-tab').on('click', showSpecs);

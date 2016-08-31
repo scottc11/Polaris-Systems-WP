@@ -68,9 +68,7 @@ function has_supplier_logo_path($path) {
   };
 }
 
-function PSI_get_attachment_url() {
-  
-}
+
 
 // PHP to Console Debugger function
 function debug_to_console( $data ) {
@@ -81,6 +79,24 @@ function debug_to_console( $data ) {
         $output = "<script>console.log( 'Debug Objects: " . $data . "' );</script>";
 
     echo $output;
+}
+
+function PSI_filter_custom_fields($fieldName) {
+  // debug_to_console($fieldName);
+  $everythingButThese = array(
+    "Feature",
+    "_edit_last",
+    "_edit_lock",
+    "description_heading",
+    "supplier_logo_path",
+    "_thumbnail_id",
+    "video_url"
+  );
+  if (in_array($fieldName, $everythingButThese)) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 
