@@ -85,35 +85,17 @@ Template Name: Product Page
 
 			<section class="row">
 
-				<?php
-					$media = get_attached_media('image');
-					debug_to_console($media[0]->slug);
-				?>
-
 				<div class="margin-top-bottom-20 col-xs-12 col-md-6">
-					<div class="product-image-container horizontal-center col-xs-12">
-						<img src="assets/machines/DYN_DF30-0.png" alt="" />
-					</div>
+					<?php
+						$images = get_attached_media('image', $post->ID);
+						foreach($images as $image) { ?>
+								<div class="product-image-container col-xs-3 col-md-4 col-lg-3 selected-image">
+									<div class="product-thumbnail">
+										<img src="<?php echo wp_get_attachment_url($image->ID); ?>" />
+									</div>
+								</div>
 
-					<div class="additional-images">
-						<div class="col-xs-3 col-md-4 col-lg-3">
-							<div class="product-thumbnail">
-								<img src="assets/machines/DYN_DF30-1.png" alt="" />
-							</div>
-						</div>
-						<div class="col-xs-3 col-md-4 col-lg-3">
-							<div class="product-thumbnail">
-								<img src="assets/machines/DYN_DF30-2.png" alt="" />
-							</div>
-						</div>
-						<div class="col-xs-3 col-md-4 col-lg-3">
-							<div class="product-thumbnail"></div>
-						</div>
-						<div class="col-xs-3 col-md-4 col-lg-3">
-							<div class="product-thumbnail"></div>
-						</div>
-					</div>
-
+					<?php } ?>
 				</div>
 
 

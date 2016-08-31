@@ -1,4 +1,12 @@
 
+
+
+// var1 = prev.sel.image
+// var2 = new.sel.image
+// assign var1 to selected DIV, assign var2 to prev.sel.DIV
+// first div in parent container will have 'selected' class
+// if first child in parent, remove col-classes, add col-xs-12 class, add selected class
+
 // Show Description tab
 function showDescription() {
 
