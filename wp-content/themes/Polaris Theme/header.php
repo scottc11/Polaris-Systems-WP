@@ -27,6 +27,7 @@
 
 		<!-- Link additional CSS files here -->
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/responsive.css">
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/animations.css">
 
 
 		<?php wp_head(); ?>

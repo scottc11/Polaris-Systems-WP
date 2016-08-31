@@ -423,23 +423,30 @@ hr {
 
 
 /*PRODUCT IMAGES*/
-.product-image-container {
+.main-product-img-container {
   width: 100%;
 }
 
-.product-thumbnail {
+.main-product-img-container img {
+  border-radius: 5px;
+}
+
+.alt-product-img-container {
   height: 100px;
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
-.product-thumbnail img {
+.alt-product-img-container img {
   width: 100%;
   height: 100%;
+  border-radius: 5px;
 }
 
-.selected-image {
-
+.alt-product-img-container img:hover {
+  box-shadow: 0 0 20px grey;
+  -moz-box-shadow: 0 0 20px grey;
+  -webkit-box-shadow: 0 0 20px grey;
 }
 
 

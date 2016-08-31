@@ -1,12 +1,16 @@
 
+function changeProductImage() {
+  // get image source of the main image container
+  var prevImgSrc = $('.main-product-img-container > img').attr('src');
+  // get image source of the clicked image
+  var newImgSrc = $(this).children('img').attr('src');
 
+  $('.main-product-img-container > img').attr('src', newImgSrc);
+  $(this).children('img').attr('src', prevImgSrc);
 
-// var1 = prev.sel.image
-// var2 = new.sel.image
-// assign var1 to selected DIV, assign var2 to prev.sel.DIV
-// first div in parent container will have 'selected' class
-// if first child in parent, remove col-classes, add col-xs-12 class, add selected class
-// if index == 0, add class
+}
+
+$('.alt-product-img-container').on('click', changeProductImage);
 
 
 // Show Description tab
