@@ -424,12 +424,11 @@ hr {
 
 /*PRODUCT IMAGES*/
 .product-image-container {
-  /*width: 100%;*/
+  width: 100%;
 }
 
 .product-thumbnail {
   height: 100px;
-  background-color: #C4E0EB;
   margin-top: 15px;
   margin-bottom: 15px;
 }
@@ -440,7 +439,7 @@ hr {
 }
 
 .selected-image {
-  
+
 }
 
 

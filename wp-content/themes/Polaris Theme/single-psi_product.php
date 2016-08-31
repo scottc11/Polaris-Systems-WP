@@ -88,13 +88,20 @@ Template Name: Product Page
 				<div class="margin-top-bottom-20 col-xs-12 col-md-6">
 					<?php
 						$images = get_attached_media('image', $post->ID);
+						$counter = 0;
 						foreach($images as $image) { ?>
-								<div class="product-image-container col-xs-3 col-md-4 col-lg-3 selected-image">
-									<div class="product-thumbnail">
-										<img src="<?php echo wp_get_attachment_url($image->ID); ?>" />
-									</div>
+							<!-- If first element -->
+							<?php if ($counter == 0) { ?>
+								<div class="product-image-container horizontal-center col-xs-12 selected-image">
+									<img src="<?php echo wp_get_attachment_url($image->ID); ?>" />
 								</div>
 
+							<?php } else { ?>
+								<div class="product-thumbnail col-xs-3 col-md-4 col-lg-3">
+										<img src="<?php echo wp_get_attachment_url($image->ID); ?>" />
+								</div>
+							<?php } ?>
+							<?php $counter++; ?>
 					<?php } ?>
 				</div>
 
