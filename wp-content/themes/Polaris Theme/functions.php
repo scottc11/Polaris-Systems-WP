@@ -81,8 +81,10 @@ function debug_to_console( $data ) {
     echo $output;
 }
 
+// function which checks to see if a specific custom field
+// is the same as specific fields in an array.
 function PSI_filter_custom_fields($fieldName) {
-  // debug_to_console($fieldName);
+  
   $everythingButThese = array(
     "Feature",
     "_edit_last",

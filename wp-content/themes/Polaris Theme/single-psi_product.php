@@ -131,7 +131,6 @@ Template Name: Product Page
 							<?php foreach ($specs as $key => $value) {
 								if ( PSI_filter_custom_fields($key) == false ) { ?>
 									<li><span class="bold-text"><?php echo $key ?>:</span> <?php echo $value[0] ?></li>
-
 								<?php }
 							} ?>
 						</ul>
@@ -142,7 +141,7 @@ Template Name: Product Page
 						<div class="col-xs-6">
 							<a href="#">
 								<div id="buy-now" class="product-page-button">
-									<h3 class="color-accent-white vertical-center">Buy Now</h3>
+									<h3 class="color-accent-white vertical-center">Email Us!</h3>
 								</div>
 							</a>
 						</div>
