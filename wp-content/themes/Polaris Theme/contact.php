@@ -56,13 +56,13 @@ Template Name: Contact Page
           <p id="success">Thanks for your message! We will get back to you ASAP!</p>
         </div>
 
-        <form method="post" action="process-form.php" class="contact-form">
+        <form id="contact-form" method="post" action="process-form.php">
 
           <input id="name" type="text" name="contact" required="required" placeholder="Contact Name:">
 
           <input id="email" type="email" name="email" required="required" placeholder="Email Address:">
 
-          <input id="telephone" type="tel" name="name" value="">
+          <input id="telephone" type="tel" name="name" value="" placeholder="Telephone:">
 
           <select id="inquiry" class="select-style" name="inquiry">
             <option value="machine">I'm interested in:</option>

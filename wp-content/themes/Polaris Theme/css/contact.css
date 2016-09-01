@@ -3,7 +3,7 @@
 /*        CONTACT PAGE CLASSES          */
 /*--------------------------------------*/
 
-.contact-form {
+#contact-form {
 
 }
 
@@ -11,9 +11,9 @@
 
 }
 
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
+#contact-form input,
+#contact-form select,
+#contact-form textarea {
   width: 100%;
   margin: 10px 0 10px 0;
   padding: 5px;
@@ -27,7 +27,7 @@
   height: 400px;
 }
 
-.contact-form input[type=submit] {
+#contact-form input[type=submit] {
   width: auto;
   padding: 10px 20px 10px 20px;
   border-radius: 5px;
@@ -38,14 +38,22 @@
   background-color: #40BBF1;
 }
 
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
+#contact-form input:focus,
+#contact-form select:focus,
+#contact-form textarea:focus {
     border: 1px solid #AFCDD8;
     /*background-color: #EBF2F4;*/
 }
 
+/*when user doesn't type stuff in*/
+#contact-form .required {
+    font-weight:bold;
+    color:#F00;
+}
+
+/*------- ERRORS --------*/
 .errors-container {
+  display: none;
   background-color: red;
   border: 1px solid black;
   padding: 10px;
@@ -61,7 +69,17 @@
   margin: 0;
 }
 
+#errors li {
+    padding:2px;
+    list-style:none;
+}
+
+#errors #info:before { content: ''; }
+#errors li:before { content: ' - '; }
+
+/*------- SUCCESS --------*/
 .success-container {
+  display: none;
   background-color: yellow;
   padding: 10px;
   border-radius: 10px;
@@ -71,8 +89,31 @@
 
 .success-container p { margin: 0; }
 
-.required {
+
+#errors.visible, #success.visible {
+    display:block;
+}
+
+ /*'push-down' effect when the submit button is active.*/
+#contact-form #submit-button:active {
+    position:relative;
+    top:1px;
+}
+
+/*.required {
   box-shadow: 0 0 20px grey;
   -moz-box-shadow: 0 0 20px grey;
   -webkit-box-shadow: 0 0 20px grey;
-}
+}*/
+
+/*THE LOADING ICON*/
+/*#contact-form #loading {
+    width:32px;
+    height:32px;
+    background-image:url(../img/loading.gif);
+    display:block;
+    position:absolute;
+    right:130px;
+    bottom:16px;
+    display:none;
+}*/
