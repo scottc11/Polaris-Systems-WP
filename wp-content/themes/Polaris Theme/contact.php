@@ -41,23 +41,40 @@ Template Name: Contact Page
           <p>
             Please fill in required information and a sales representatives will get in touch with you.  Thank you for your interest.
           </p>
+
         </div>
 
-        <form class="contact-form">
-          <input id="contact-name" type="text" name="contact" placeholder="Contact Name:">
+        <!-- ERROR -->
+        <div class="errors-container">
+          <ul id="errors">
+            <li id="info">There were some problems with your form submission:</li>
+          </ul>
+        </div>
 
-          <input id="contact-email" type="text" name="contact" placeholder="Email Address:">
+        <!-- SUCCESS -->
+        <div class="success-container">
+          <p id="success">Thanks for your message! We will get back to you ASAP!</p>
+        </div>
 
-          <select class="select-style" name="interest">
+        <form method="post" action="process-form.php" class="contact-form">
+
+          <input id="name" type="text" name="contact" required="required" placeholder="Contact Name:">
+
+          <input id="email" type="email" name="email" required="required" placeholder="Email Address:">
+
+          <input id="telephone" type="tel" name="name" value="">
+
+          <select id="inquiry" class="select-style" name="inquiry">
             <option value="machine">I'm interested in:</option>
             <option value="machine">Machine</option>
             <option value="machine">Machine</option>
             <option value="machine">Machine</option>
           </select>
 
-          <textarea name="message" placeholder="Message:" rows="8"></textarea>
+          <textarea id="message" name="message" placeholder="Message:" rows="8" maxlength="1000"></textarea>
 
-          <input type="submit" name="name" value="Send">
+          <span id="loading"></span>
+          <input id="submit-button" type="submit" value="Send">
 
         </form>
 
