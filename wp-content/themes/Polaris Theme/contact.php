@@ -81,6 +81,9 @@ Template Name: Contact Page
       </div>
 
 
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+      <!--          GOOGLE MAP            -->
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
       <div class="map-container col-xs-12 col-md-6">
 
