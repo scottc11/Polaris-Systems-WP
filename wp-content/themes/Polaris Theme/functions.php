@@ -62,6 +62,16 @@ if (function_exists('add_theme_support'))
     Functions
 \*------------------------------------*/
 
+
+// add_action( 'init', 'unregister_taxonomy');
+// function unregister_taxonomy(){
+//     global $wp_taxonomies;
+//     $taxonomy = 'dynaric';
+//     if ( taxonomy_exists( $taxonomy))
+//         unset( $wp_taxonomies[$taxonomy]);
+// }
+
+
 function has_supplier_logo_path($path) {
   if ( $path != '' ) {
     return true;
