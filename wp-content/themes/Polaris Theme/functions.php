@@ -84,7 +84,7 @@ function debug_to_console( $data ) {
 // function which checks to see if a specific custom field
 // is the same as specific fields in an array.
 function PSI_filter_custom_fields($fieldName) {
-  
+
   $everythingButThese = array(
     "Feature",
     "_edit_last",
@@ -256,13 +256,13 @@ if (function_exists('register_sidebar'))
 {
     // Define Sidebar Widget Area 1
     register_sidebar(array(
-        'name' => __('Widget Area 1', 'html5blank'),
-        'description' => __('Description for this widget-area...', 'html5blank'),
-        'id' => 'widget-area-1',
+        'name' => 'Products Page Sidebar',
+        'description' => 'displaying all catgeories and tags of products',
+        'id' => 'products-sidebar',
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget' => '</div>',
-        'before_title' => '<h3>',
-        'after_title' => '</h3>'
+        'before_title' => '<h4>',
+        'after_title' => '</h4>'
     ));
 
     // Define Sidebar Widget Area 2

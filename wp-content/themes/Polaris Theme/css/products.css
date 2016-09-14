@@ -9,17 +9,6 @@ baby-blue: #0BB2F0;
 dark-blue:  rgb(24, 143, 192);
 */
 
-/*ADD THESE TO TOP OF STYLE.CSS*/
-
-.underlined-header-container h1 {
-  margin-bottom: 0;
-}
-
-.my-inline-block {
-  display: inline-block;
-}
-
-
 
 /*--------------------------------------*/
 /*        SIDEBAR                       */
