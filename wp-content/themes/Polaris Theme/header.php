@@ -54,16 +54,6 @@
 								<img class="header-logo vertical-center" src="<?php echo get_template_directory_uri(); ?>/assets/polaris_logo_white.png" alt="" />
 							</div>
 
-
-							<!-- <div class="header-nav-container col-xs-3 col-xs-offset-3 col-sm-8 col-sm-offset-0 col-md-6 col-md-offset-3">
-								<ul class="nav vertical-center ">
-									<li><a href="product-page.html">Products</a></li>
-									<li><a href="#services">Services</a></li>
-									<li><a href="contact.html">Contact</a></li>
-									<li id="menu-hamburger"><a href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a></li>
-								</ul>
-							</div> -->
-
 							<!-- nav -->
 							<nav class="header-nav-container col-xs-3 col-xs-offset-3 col-sm-8 col-sm-offset-0 col-md-6 col-md-offset-3" role="navigation">
 

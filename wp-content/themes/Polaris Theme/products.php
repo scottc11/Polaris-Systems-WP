@@ -134,6 +134,8 @@ Template Name: Products Page
   							<?php endif; ?>
 							<!-- /product thumbnail -->
               </div>
+
+
               <div class="product-summary-heading">
 
                 <?php
@@ -155,9 +157,8 @@ Template Name: Products Page
                   }
                 ?>
 
-
-
                 <h4 class="ps-name"><?php the_title(); ?></h4>
+
               </div>
             </div>
           </div>

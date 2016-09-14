@@ -63,14 +63,6 @@ if (function_exists('add_theme_support'))
 \*------------------------------------*/
 
 
-// add_action( 'init', 'unregister_taxonomy');
-// function unregister_taxonomy(){
-//     global $wp_taxonomies;
-//     $taxonomy = 'dynaric';
-//     if ( taxonomy_exists( $taxonomy))
-//         unset( $wp_taxonomies[$taxonomy]);
-// }
-
 
 function has_supplier_logo_path($path) {
   if ( $path != '' ) {
@@ -112,30 +104,68 @@ function PSI_filter_custom_fields($fieldName) {
 }
 
 
-
-
-// HTML5 Blank navigation
-function html5blank_nav()
+// Register HTML5 Blank Navigation
+function register_html5_menu()
 {
-    wp_nav_menu(
-    array(
-        'theme_location'  => 'header-menu',
-        'menu'            => '',
-        'container'       => 'div',
-        'container_class' => '',
-        'container_id'    => '',
-        'menu_class'      => 'vertical-center',
-        'menu_id'         => '',
-        'echo'            => true,
-        'fallback_cb'     => 'wp_page_menu',
-        'before'          => '',
-        'after'           => '',
-        'link_before'     => '',
-        'link_after'      => '',
-        'items_wrap'      => '<ul>%3$s</ul>',
-        'depth'           => 0,
-        'walker'          => ''
+    register_nav_menus(array( // Using array to specify more menus if needed
+        'header-menu' => __('Header Menu', 'html5blank'), // Main Navigation
+        'sidebar-menu' => __('Sidebar Menu', 'html5blank'), // Sidebar Navigation
+        'products-page-menu' => __('Products Page Menu', 'html5blank'), // Sidebar Navigation
+        'extra-menu' => __('Extra Menu', 'html5blank') // Extra Navigation if needed (duplicate as many as you need!)
+    ));
+}
+
+// Remove the <div> surrounding the dynamic navigation to cleanup markup
+function my_wp_nav_menu_args($args = '')
+{
+    $args['container'] = false;
+    return $args;
+}
+
+function PS_products_page_nav() {
+  wp_nav_menu(
+      array(
+          'theme_location'  => 'products-page-menu',
+          'menu'            => '',
+          'container'       => 'div',
+          'container_class' => '',
+          'container_id'    => '',
+          'menu_class'      => 'vertical-center',
+          'menu_id'         => '',
+          'echo'            => true,
+          'fallback_cb'     => 'wp_page_menu',
+          'before'          => '',
+          'after'           => '',
+          'link_before'     => '',
+          'link_after'      => '',
+          'items_wrap'      => '<ul>%3$s</ul>',
+          'depth'           => 0,
+          'walker'          => ''
         )
+  );
+}
+
+// Main Nav Menu (in header)
+function html5blank_nav() {
+    wp_nav_menu(
+        array(
+            'theme_location'  => 'header-menu',
+            'menu'            => '',
+            'container'       => 'div',
+            'container_class' => '',
+            'container_id'    => '',
+            'menu_class'      => 'vertical-center',
+            'menu_id'         => '',
+            'echo'            => true,
+            'fallback_cb'     => 'wp_page_menu',
+            'before'          => '',
+            'after'           => '',
+            'link_before'     => '',
+            'link_after'      => '',
+            'items_wrap'      => '<ul>%3$s</ul>',
+            'depth'           => 0,
+            'walker'          => ''
+          )
     );
 }
 
@@ -207,22 +237,7 @@ function html5blank_styles()
     }
 }
 
-// Register HTML5 Blank Navigation
-function register_html5_menu()
-{
-    register_nav_menus(array( // Using array to specify more menus if needed
-        'header-menu' => __('Header Menu', 'html5blank'), // Main Navigation
-        'sidebar-menu' => __('Sidebar Menu', 'html5blank'), // Sidebar Navigation
-        'extra-menu' => __('Extra Menu', 'html5blank') // Extra Navigation if needed (duplicate as many as you need!)
-    ));
-}
 
-// Remove the <div> surrounding the dynamic navigation to cleanup markup
-function my_wp_nav_menu_args($args = '')
-{
-    $args['container'] = false;
-    return $args;
-}
 
 // Remove Injected classes, ID's and Page ID's from Navigation <li> items
 function my_css_attributes_filter($var)
