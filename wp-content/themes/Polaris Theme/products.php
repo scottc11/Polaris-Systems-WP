@@ -33,11 +33,29 @@ Template Name: Products Page
 
         <div id="products-sidebar">
 
+
+          <?php // ASSIGNING CATEGORIES TO VARIABLES FOR USE IN LISTS
+
+            $sidebarCategories = get_categories();
+
+            $parent_categories = get_categories(array(
+                'orderby' => 'name',
+                'parent'  => 0
+              )
+            );
+
+            $parent_ids = array();
+
+            foreach ($parent_categories as $category) {
+              $parent_ids[$category->slug] = $category->term_id;
+            }
+          ?>
+
           <div class="widget-container">
 
             <div class="widget-header">
 
-              <h4>Products</h4>
+              <h4>Type</h4>
               <div class="expander">
                 <h4 class=""><span class="glyphicon glyphicon-triangle-top"></span></h4>
               </div>
@@ -46,18 +64,39 @@ Template Name: Products Page
 
             <div class="widget-content">
               <ul>
-                <li>Strapping Machines</li>
-                <li>Stretch Wrappers</li>
-                <li>Stretch Film + Banding</li>
-                <li>Tools</li>
-                <li>Accessories</li>
+                <?php foreach ($sidebarCategories as $category) {
+                  if ( $category->category_parent == $parent_ids['type']) { ?>
+                    <li><?php echo $category->name; ?></li>
+                  <?php }
+                } ?>
+              </ul>
+            </div>
+          </div>
+
+
+
+          <div class="widget-container">
+            <div class="widget-header">
+              <h4>Manufacturer</h4>
+              <div class="expander">
+                <h4 class=""><span class="glyphicon glyphicon-triangle-top"></span></h4>
+              </div>
+            </div>
+
+            <div class="widget-content">
+              <ul>
+                <?php foreach ($sidebarCategories as $category) {
+                  if ( $category->category_parent == $parent_ids['manufacturer']) { ?>
+                    <li><?php echo $category->name; ?></li>
+                  <?php }
+                } ?>
               </ul>
             </div>
           </div>
 
           <div class="widget-container">
             <div class="widget-header">
-              <h4>Brands</h4>
+              <h4>Performance</h4>
               <div class="expander">
                 <h4 class=""><span class="glyphicon glyphicon-triangle-top"></span></h4>
               </div>
@@ -65,28 +104,11 @@ Template Name: Products Page
 
             <div class="widget-content">
               <ul>
-                <li>Cyclop</li>
-                <li>Wulftec</li>
-                <li>Dynaric</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="widget-container">
-            <div class="widget-header">
-              <h4>Other</h4>
-              <div class="expander">
-                <h4 class=""><span class="glyphicon glyphicon-triangle-top"></span></h4>
-              </div>
-            </div>
-
-            <div class="widget-content">
-              <ul>
-                <li>Strapping Machines</li>
-                <li>Stretch Wrappers</li>
-                <li>Stretch Film + Banding</li>
-                <li>Tools</li>
-                <li>Accessories</li>
+                <?php foreach ($sidebarCategories as $category) {
+                  if ( $category->category_parent == $parent_ids['performance']) { ?>
+                    <li><?php echo $category->name; ?></li>
+                  <?php }
+                } ?>
               </ul>
             </div>
           </div>
