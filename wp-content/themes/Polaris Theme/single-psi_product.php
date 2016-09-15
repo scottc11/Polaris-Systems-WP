@@ -7,23 +7,10 @@ Template Name: Product Page
 <?php get_header(); ?>
 
 	<!-- START OF LOOP -->
-	<?php
+	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-		// define the post type for the loop
-		$args = array(
-			'post_type' => 'psi_product',
-			'supports' => array('title','editor','thumbnail','custom-fields')
-		);
-
-		// Create a new WP loop query and hand it the custom post type arguments
-		$loop = new WP_Query( $args );
-
-		if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post();
-
-	?>
 
 	<article class="container">
-
 
 			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 			<!--          WEB TRAIL       		  -->
@@ -77,9 +64,10 @@ Template Name: Product Page
 
 
 
-			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-			<!--          PRODUCT IMAGES        -->
-			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+			<!--          PRODUCT IMAGES              -->
+			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+			<!-- see main.js for user changing images -->
 
 			<section class="row">
 

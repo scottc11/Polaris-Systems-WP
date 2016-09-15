@@ -413,6 +413,7 @@ hr {
 
 .main-product-img-container img {
   border-radius: 5px;
+  max-width: 100%;
 }
 
 .alt-product-img-container {
