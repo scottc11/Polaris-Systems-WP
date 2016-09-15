@@ -126,24 +126,26 @@ Template Name: Products Page
 
       <section class="container col-xs-12 col-sm-9">
 
-        <!-- START OF LOOP -->
-        <?php
-
-          // define the post type for the loop
-          $args = array(
-            'post_type' => 'psi_product',
-            'supports' => array('title','editor','thumbnail','custom-fields')
-          );
-
-          // Create a new WP loop query and hand it the custom post type arguments
-          $loop = new WP_Query( $args );
-
-          if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post();
-
-        ?>
-
-
         <div class="row">
+
+          <!-- START OF LOOP -->
+          <?php
+
+            // define the post type for the loop
+            $args = array(
+              'post_type' => 'psi_product',
+              'supports' => array('title','editor','thumbnail','custom-fields')
+            );
+
+            // Create a new WP loop query and hand it the custom post type arguments
+            $loop = new WP_Query( $args );
+
+            if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post();
+
+          ?>
+
+
+
 
           <div class="col-xs-6 col-sm-4">
             <div class="product-summary-container">
@@ -167,16 +169,22 @@ Template Name: Products Page
                   $typeCat = get_category_by_slug('type');
                   $typeCatID =  $typeCat->term_id;
 
+                  // looping through categories array and matching child categories
+                  // with parent categories.
                   foreach ($categories as $category) {
                     if ($category->category_parent == $manufacturerCatID) { ?>
                       <h4 class="ps-brand"><?php echo $category->name; ?></h4>
                       <?php
                     }
+                  }
+
+                  foreach ($categories as $category) {
                     if ($category->category_parent == $typeCatID) { ?>
                         <h4 class="ps-type"><?php echo $category->name; ?></h4>
                       <?php
                     }
                   }
+
                 ?>
 
                 <h4 class="ps-name"><?php the_title(); ?></h4>
@@ -185,13 +193,15 @@ Template Name: Products Page
             </div>
           </div>
 
+
+
+
+          <!-- END OF LOOP -->
+        	<?php endwhile; else: ?>
+        		<p><?php _e( 'The product you are looking for could not be found.' ); ?></p>
+        	<?php endif; ?>
+
         </div>
-
-
-        <!-- END OF LOOP -->
-      	<?php endwhile; else: ?>
-      		<p><?php _e( 'The product you are looking for could not be found.' ); ?></p>
-      	<?php endif; ?>
 
       </section>
 

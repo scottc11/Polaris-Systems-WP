@@ -83,6 +83,7 @@ dark-blue:  rgb(24, 143, 192);
 
 .product-summary-container {
   background-color: rgb(235, 235, 235);
+  /*height: 340px;*/
   margin-top: 15px;
   margin-bottom: 15px;
   padding: 0;
