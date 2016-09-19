@@ -38,18 +38,23 @@ Template Name: Products Page
 
             $sidebarCategories = get_categories();
 
-            $parent_categories = get_categories(array(
+            // getting all the parent categories
+            $parent_categories = get_categories( array(
                 'orderby' => 'name',
                 'parent'  => 0
               )
             );
 
-            $parent_ids = array();
+            $parent_ids = array(); // array to hold ID's
 
+            // building and array full of all the parent category ID's
             foreach ($parent_categories as $category) {
               $parent_ids[$category->slug] = $category->term_id;
             }
           ?>
+
+          <!-- ~~~~~~~~~~~~~~~ -->
+          <!-- TYPE -->
 
           <div class="widget-container">
 
@@ -66,7 +71,9 @@ Template Name: Products Page
               <ul>
                 <?php foreach ($sidebarCategories as $category) {
                   if ( $category->category_parent == $parent_ids['type']) { ?>
+
                     <li><?php echo $category->name; ?></li>
+
                   <?php }
                 } ?>
               </ul>
@@ -128,78 +135,26 @@ Template Name: Products Page
 
         <div class="row">
 
-          <!-- START OF LOOP -->
           <?php
 
+            require 'global-vars.php';
+
             // define the post type for the loop
-            $args = array(
+            // the default will be all of the posts i.e psi_product
+
+            $products_query_args = array(
+
               'post_type' => 'psi_product',
               'supports' => array('title','editor','thumbnail','custom-fields')
+
             );
 
             // Create a new WP loop query and hand it the custom post type arguments
-            $loop = new WP_Query( $args );
-
-            if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post();
+            $products_page_query = new WP_Query( $products_query_args );
 
           ?>
 
-
-
-
-          <div class="col-xs-6 col-sm-4">
-            <div class="product-summary-container">
-              <div class="product-summary-img">
-                <!-- product thumbnail -->
-  							<?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
-  								<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                    <?php the_post_thumbnail(); ?>
-  								</a>
-  							<?php endif; ?>
-							<!-- /product thumbnail -->
-              </div>
-
-
-              <div class="product-summary-heading">
-
-                <?php
-                  $categories = get_the_category();
-                  $manufacturerCat = get_category_by_slug('manufacturer');
-                  $manufacturerCatID =  $manufacturerCat->term_id;
-                  $typeCat = get_category_by_slug('type');
-                  $typeCatID =  $typeCat->term_id;
-
-                  // looping through categories array and matching child categories
-                  // with parent categories.
-                  foreach ($categories as $category) {
-                    if ($category->category_parent == $manufacturerCatID) { ?>
-                      <h4 class="ps-brand"><?php echo $category->name; ?></h4>
-                      <?php
-                    }
-                  }
-
-                  foreach ($categories as $category) {
-                    if ($category->category_parent == $typeCatID) { ?>
-                        <h4 class="ps-type"><?php echo $category->name; ?></h4>
-                      <?php
-                    }
-                  }
-
-                ?>
-
-                <h4 class="ps-name"><?php the_title(); ?></h4>
-
-              </div>
-            </div>
-          </div>
-
-
-
-
-          <!-- END OF LOOP -->
-        	<?php endwhile; else: ?>
-        		<p><?php _e( 'The product you are looking for could not be found.' ); ?></p>
-        	<?php endif; ?>
+          <?php get_template_part('loop-products') ?>
 
         </div>
 

@@ -69,6 +69,7 @@ dark-blue:  rgb(24, 143, 192);
 }
 
 .widget-content ul li {
+  color: black;
   font-size: 1.2em;
   margin: 5px 0 5px 0;
 }

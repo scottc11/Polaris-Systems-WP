@@ -1,3 +1,7 @@
+
+
+
+
 // Products Sidebar buttons
 $('.expander').on('click', function() {
 

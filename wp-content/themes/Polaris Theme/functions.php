@@ -63,14 +63,12 @@ if (function_exists('add_theme_support'))
 \*------------------------------------*/
 
 
-
+// Check if single post has a logo path
 function has_supplier_logo_path($path) {
   if ( $path != '' ) {
     return true;
   };
 }
-
-
 
 // PHP to Console Debugger function
 function debug_to_console( $data ) {
@@ -103,6 +101,39 @@ function PSI_filter_custom_fields($fieldName) {
   }
 }
 
+// ---------------------------------------------
+//        SETTING VARIABLES FOR PRODUCTS LOOP
+// ---------------------------------------------
+
+// this will be used when AJAX is implemented
+function PSI_set_query_parameters( $cat_slug ) {
+
+  $products_query_args = array(
+    'post_type' => 'psi_product',
+    'category_name' => $cat_slug,
+    'supports' => array('title','editor','thumbnail','custom-fields')
+  );
+
+}
+
+// ---------------------------------------------
+//        ENQUEING ASSETS AND SCRIPTS
+// ---------------------------------------------
+
+function my_assets() {
+
+  wp_enqueue_style( 'theme-style', get_template_directory_uri().'/style.css' );
+	wp_enqueue_script( 'ajax-script', get_template_directory_uri() . '/js/ajax-scripts.js', array( 'jquery' ), '1.0', true );
+}
+
+add_action( 'wp_enqueue_scripts', 'my_assets' );
+
+
+
+
+// ---------------------------------------------
+//                MENUS
+// ---------------------------------------------
 
 // Register HTML5 Blank Navigation
 function register_html5_menu()
@@ -168,6 +199,11 @@ function html5blank_nav() {
           )
     );
 }
+
+// ---------------------------------------------
+
+
+
 
 // Load HTML5 Blank scripts (header.php)
 function html5blank_header_scripts()
