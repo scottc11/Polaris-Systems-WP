@@ -51,7 +51,9 @@
 						<div class="row">
 
 							<div class="header-logo-container col-xs-6 col-sm-4 col-sm-offset-0 col-md-3 col-md-offset-0 col-lg-3 ">
-								<img class="header-logo vertical-center" src="<?php echo get_template_directory_uri(); ?>/assets/polaris_logo_white.png" alt="" />
+								<a href="<?php echo home_url(); ?>">
+									<img class="header-logo vertical-center" src="<?php echo get_template_directory_uri(); ?>/assets/polaris_logo_white.png" alt="" />
+								</a>
 							</div>
 
 							<!-- nav -->

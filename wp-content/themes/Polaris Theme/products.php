@@ -8,14 +8,6 @@ Template Name: Products Page
 
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/products.css">
 
-<?php require 'global-vars.php'; ?>
-
-<script>
-  function changeCatParameter() {
-    var php = <?php  ?>;
-  }
-</script>
-
 
   <main id="" class="container">
 
@@ -30,10 +22,12 @@ Template Name: Products Page
 
 
 
-    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-    <!--          SIDEBAR               -->
-    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
     <div class="row">
+
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+      <!--          SIDEBAR               -->
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
       <?php get_template_part('products-sidebar'); ?>
 
@@ -47,6 +41,7 @@ Template Name: Products Page
 
         <div class="row">
 
+          <!-- preparing the loop -->
           <?php
 
             require 'global-vars.php';
@@ -66,20 +61,14 @@ Template Name: Products Page
 
           ?>
 
+          <!-- the loop -->
           <?php get_template_part('loop-products') ?>
 
         </div>
 
       </section>
 
-
-
     </div>
-
   </main>
-
-
-
-
 
 <?php get_footer(); ?>
