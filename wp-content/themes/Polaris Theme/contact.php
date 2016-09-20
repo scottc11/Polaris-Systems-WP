@@ -6,6 +6,7 @@ Template Name: Contact Page
 
 <?php get_header(); ?>
 
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/contact.css">
 
 
   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -31,11 +32,6 @@ Template Name: Contact Page
         </div>
 
         <div class="margin-top-20">
-          <h5 class="margin-minimal">Email us at:</h5>
-          <h4 class="color-accent-baby-blue margin-minimal">sales@polaris-systems.net</h4>
-        </div>
-
-        <div class="margin-top-20">
           <h4>Contact Form</h4>
 
           <p>
@@ -44,39 +40,7 @@ Template Name: Contact Page
 
         </div>
 
-        <!-- ERROR -->
-        <div class="errors-container">
-          <ul id="errors">
-            <li id="info">There were some problems with your form submission:</li>
-          </ul>
-        </div>
-
-        <!-- SUCCESS -->
-        <div class="success-container">
-          <p id="success">Thanks for your message! We will get back to you ASAP!</p>
-        </div>
-
-        <form id="contact-form" method="post" action="process-form.php">
-
-          <input id="name" type="text" name="contact" required="required" placeholder="Contact Name:">
-
-          <input id="email" type="email" name="email" required="required" placeholder="Email Address:">
-
-          <input id="telephone" type="tel" name="name" value="" placeholder="Telephone:">
-
-          <select id="inquiry" class="select-style" name="inquiry">
-            <option value="machine">I'm interested in:</option>
-            <option value="machine">Machine</option>
-            <option value="machine">Machine</option>
-            <option value="machine">Machine</option>
-          </select>
-
-          <textarea id="message" name="message" placeholder="Message:" rows="8" maxlength="1000"></textarea>
-
-          <span id="loading"></span>
-          <input id="submit-button" type="submit" value="Send">
-
-        </form>
+        <?php echo do_shortcode(' [contact-form-7 id="65" title="Contact form 1" ]'); ?>
 
       </div>
 
@@ -105,6 +69,7 @@ Template Name: Contact Page
         <!-- /GOOGLE MAPS API -->
 
       </div>
+
 
     </div>
 
