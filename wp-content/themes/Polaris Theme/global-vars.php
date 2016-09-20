@@ -8,4 +8,11 @@
 
   global $products_query_args;
 
+  $products_query_args = array(
+
+    'post_type' => 'psi_product',
+    'supports' => array('title','editor','thumbnail','custom-fields')
+
+  );
+
  ?>

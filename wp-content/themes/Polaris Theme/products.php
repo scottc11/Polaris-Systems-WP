@@ -8,7 +8,13 @@ Template Name: Products Page
 
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/products.css">
 
+<?php require 'global-vars.php'; ?>
 
+<script>
+  function changeCatParameter() {
+    var php = <?php  ?>;
+  }
+</script>
 
 
   <main id="" class="container">
@@ -71,9 +77,9 @@ Template Name: Products Page
               <ul>
                 <?php foreach ($sidebarCategories as $category) {
                   if ( $category->category_parent == $parent_ids['type']) { ?>
-
-                    <li><?php echo $category->name; ?></li>
-
+                    <a href="<?php echo get_term_link( $category->term_id ); ?>">
+                      <li><?php echo $category->name; ?></li>
+                    </a>
                   <?php }
                 } ?>
               </ul>
@@ -142,12 +148,12 @@ Template Name: Products Page
             // define the post type for the loop
             // the default will be all of the posts i.e psi_product
 
-            $products_query_args = array(
-
-              'post_type' => 'psi_product',
-              'supports' => array('title','editor','thumbnail','custom-fields')
-
-            );
+            // $products_query_args = array(
+            //
+            //   'post_type' => 'psi_product',
+            //   'supports' => array('title','editor','thumbnail','custom-fields')
+            //
+            // );
 
             // Create a new WP loop query and hand it the custom post type arguments
             $products_page_query = new WP_Query( $products_query_args );
