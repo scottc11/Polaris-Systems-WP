@@ -54,8 +54,8 @@
 
 
 		<!-- FRAMEWORKS -->
-		<script src="<?php echo get_template_directory_uri(); ?>/js/vendor/modernizr-2.8.3.min.js"></script>
-		<script src="<?php echo get_template_directory_uri(); ?>/libraries/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		<!-- <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/modernizr-2.8.3.min.js"></script> -->
+		<script src="<?php echo get_template_directory_uri(); ?>/frameworks/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 
 		<!-- CUSTOM SCRIPTS -->
 		<script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
