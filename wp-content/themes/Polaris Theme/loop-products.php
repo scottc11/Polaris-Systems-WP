@@ -1,8 +1,7 @@
-
 <?php require 'global-vars.php'; ?>
 
 <!-- START OF LOOP --> <!-- query arguments set in products page -->
-<?php if ( $products_page_query->have_posts() ) : while ( $products_page_query->have_posts() ) : $products_page_query->the_post(); ?>
+<?php if ( $productsQuery->have_posts() ) : while ( $productsQuery->have_posts() ) : $productsQuery->the_post(); ?>
 
 
 <div class="col-xs-6 col-sm-4">

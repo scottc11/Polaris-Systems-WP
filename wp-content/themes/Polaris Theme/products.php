@@ -148,15 +148,15 @@ Template Name: Products Page
             // define the post type for the loop
             // the default will be all of the posts i.e psi_product
 
-            // $products_query_args = array(
-            //
-            //   'post_type' => 'psi_product',
-            //   'supports' => array('title','editor','thumbnail','custom-fields')
-            //
-            // );
+            $products_query_args = array(
+
+              'post_type' => 'psi_product',
+              'supports' => array('title','editor','thumbnail','custom-fields')
+
+            );
 
             // Create a new WP loop query and hand it the custom post type arguments
-            $products_page_query = new WP_Query( $products_query_args );
+            $productsQuery = new WP_Query( $products_query_args );
 
           ?>
 
