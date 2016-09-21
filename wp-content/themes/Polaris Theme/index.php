@@ -52,66 +52,79 @@
 
 					</div>
 
+					<?php
+						$categories = get_categories();
+						// var_dump(wp_list_pages());
+					?>
+
 					<div class="row">
 
 						<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-3 col-md-offset-0 col-lg-3">
 
-							<div class="product-box">
+							<a href="<?php echo get_category_link( 18 ); ?>">
+								<div class="product-box">
 
-								<div class="product-image-container">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/wrapping.png" alt="" />
-								</div>
-								<div class="product-box-heading">
-									<h3 class="vertical-center">Stretch Wrappers</h3>
-								</div>
+									<div class="product-image-container">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/wrapping.png" alt="" />
+									</div>
+									<div class="product-box-heading">
+										<h3 class="vertical-center">Stretch Wrappers</h3>
+									</div>
 
-							</div>
+								</div>
+							</a>
 
 						</div>
 
 						<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-3 col-md-offset-0 col-lg-3">
 
-							<div class="product-box">
-								<div class="product-image-container">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/strapping.jpg" alt="" />
-								</div>
+							<a href="<?php echo get_category_link( 12 ); ?>">
+								<div class="product-box">
+									<div class="product-image-container">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/DYN_N3400-0.png" alt="" />
+									</div>
 
-								<div class="product-box-heading">
-									<h3 class="vertical-center">Strapping Machines</h3>
+									<div class="product-box-heading">
+										<h3 class="vertical-center">Strapping Machines</h3>
+									</div>
 								</div>
-							</div>
+							</a>
 
 						</div>
 
 						<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-3 col-md-offset-0 col-lg-3">
 
-							<div class="product-box">
-								<div class="product-image-container">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/stretch-film.jpg" alt="" />
+							<a href="http://www.polaris-systems.net/products/">
+								<div class="product-box">
+									<div class="product-image-container">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/stretch-film.jpg" alt="" />
+									</div>
+									<div class="product-box-heading">
+										<h3 class="vertical-center">Stretch Film and Strapping/Banding</h3>
+									</div>
 								</div>
-								<div class="product-box-heading">
-									<h3 class="vertical-center">Stretch Film and Strapping/Banding</h3>
-								</div>
-							</div>
+							</a>
 
 						</div>
 
 						<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-3 col-md-offset-0 col-lg-3">
 
-							<div class="product-box">
-								<div class="product-image-container">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/banding.png" alt="" />
+							<a href="http://www.polaris-systems.net/products/">
+								<div class="product-box">
+									<div class="product-image-container">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/banding.png" alt="" />
+									</div>
+									<div class="product-box-heading">
+										<h3 class="vertical-center">Tools and Accessories</h3>
+									</div>
 								</div>
-								<div class="product-box-heading">
-									<h3 class="vertical-center">Tools and Accessories</h3>
-								</div>
-							</div>
+							</a>
 
 						</div>
 
 					</div>
 
-						<p class="col-xs-12"><a href="#">VIEW ALL PRODUCTS</a></p>
+						<p class="col-xs-12"><a href="http://www.polaris-systems.net/products/">VIEW ALL PRODUCTS</a></p>
 
 						<hr class="col-xs-12">
 
@@ -210,6 +223,10 @@
 
 						<div class="supplier">
 							<img src="<?php echo get_template_directory_uri(); ?>/assets/mjmallis.png" alt="" />
+						</div>
+
+						<div class="supplier">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/supplier-logos/pacstrapping.png" alt="" />
 						</div>
 
 					</div>

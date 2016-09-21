@@ -304,13 +304,16 @@ hr {
 
 .product-box-heading {
   display: block;
+  box-sizing: border-box;
   background-color: #00aeef;
   height: 80px;
-  /*border-top: 2px solid black;*/
+
 }
 
-.product-box-heading h2 {
+.product-box-heading h3 {
   font-weight: bold;
+  color: black;
+  text-decoration: none;
 }
 
 .products-container p a {
@@ -318,6 +321,15 @@ hr {
   font-weight: bold;
   text-decoration: none;
   text-decoration: underline;
+}
+
+.unstyled-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.unstyled-link:hover {
+  color: #00aeef;
 }
 
 /*--------------------------------------*/

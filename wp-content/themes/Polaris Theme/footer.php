@@ -25,7 +25,7 @@
 							<ul>
 								<li><span>Contact us now</span></li>
 								<li>905.542.7577</li>
-								<li>sales@polaris-systems.net</li>
+								<li><a class="unstyled-link" href="http://www.polaris-systems.net/contact/">Email</a></li>
 							</ul>
 						</div>
 
